@@ -67,31 +67,6 @@ app.post("/imageurl", (req, res) => {
   image.handleApiCall(req, res);
 });
 
-//old material of register
-//   bcrypt.hash(password, null, null, (err, hash) => {
-//     console.log(hash);
-//     databaseMock.users.psh({
-//       id: "1235",
-//       name: name,
-//       email: email,
-//       password: password
-//       entries: 0,
-//       joined: new Date(),
-//     });
-//   });
-
-// old content from /signin
-//   bcrypt.compare(
-//     req.body.password,
-//     "$2a$10$NMAH.b7efav11zSwf/k7F./FtQfnCg3d/3cO8O4cXc8vWNPmh6Ed6",
-//     (err, resp) => {
-//       console.log("res of bcrypt: ", resp);
-//       console.log(typeof resp);
-//       if (resp === true) {
-//         console.log("setting success to true");
-//         success = true;
-//       }
-//     }
-//   );
-
-app.listen(3000);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`app is running on port ${process.env.PORT}`);
+});

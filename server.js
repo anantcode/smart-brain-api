@@ -46,7 +46,7 @@ const databaseMock = {
 
 app.get("/", (req, res) => {
   //   res.send("I hear you. This is working.");
-  res.send("Nothing special here");
+  res.send("<h1>Hello Soumya :) </h1>");
 });
 
 app.post("/signin", signin.handleSignin(db, bcrypt));

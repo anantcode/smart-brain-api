@@ -23,27 +23,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const databaseMock = {
-  users: [
-    {
-      id: "123",
-      name: "John",
-      email: "john@gmail.com",
-      password: "cookies",
-      entries: 0,
-      joined: new Date(),
-    },
-    {
-      id: "1234",
-      name: "Anant",
-      email: "anant@gmail.com",
-      password: "doodles",
-      entries: 0,
-      joined: new Date(),
-    },
-  ],
-};
-
 app.get("/", (req, res) => {
   //   res.send("I hear you. This is working.");
   res.send("<h1>Hello Anant :) </h1>");
@@ -68,5 +47,5 @@ app.post("/imageurl", (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`app is running on port ${process.env.PORT}`);
+  console.log("app is running on port " + (process.env.PORT || 3000));
 });

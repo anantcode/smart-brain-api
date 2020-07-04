@@ -10,7 +10,7 @@ const image = require("./controllers/image");
 const db = knex({
   client: "pg", //for postgres
   connection: {
-    host: "127.0.0.1", //in prod, this should contain whereever we set up DB on hosted platform.
+    host: "postgresql-flat-71259", //in prod, this should contain whereever we set up DB on hosted platform.
     user: "postgres", //could also have been anantpan
     password: "test",
     database: "smart-brain",
@@ -25,7 +25,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   //   res.send("I hear you. This is working.");
-  res.send("<h1>Hello Anant :) </h1>");
+  res.send("<h1>Hello Anant - YOLO - Learn and earn :) </h1>");
 });
 
 app.post("/signin", signin.handleSignin(db, bcrypt));

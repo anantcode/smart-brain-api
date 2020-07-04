@@ -10,10 +10,10 @@ const image = require("./controllers/image");
 const db = knex({
   client: "pg", //for postgres
   connection: {
-    host: "postgresql-flat-71259", //in prod, this should contain whereever we set up DB on hosted platform.
-    user: "postgres", //could also have been anantpan
-    password: "test",
-    database: "smart-brain",
+    host: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 });
 
